@@ -19,22 +19,6 @@ In order to make the tweets suitable for use with the VADER algorithm, each raw 
 Afterward, the cleaned tweet data was fed into the VADER algorithm to measure their polarity and compound score. The tweet was categorized as positive if the compound score was over 0, negative if the compound score was under 0, or neutral if the compound score was 0. The price and transaction volume changes were calculated using a simple return formula.
 
 Three methods were employed for further analysis. First, the Augmented Dickey-Fuller (ADF) test was used to determine the stationarity of the time-series data used in this research. (Dickey & Fuller, 1979). Second, the Johansen Cointegration test was employed to determine if the time-series used in this research were cointegrated, showing whether there exists a long-term connection between them (Johansen, 1988). Lastly, the Granger causality was utilized to see a two-way relationship between two variables, showing whether a certain factor was capable of predicting another factor, or vice versa (Engle & Granger, 1987).
-## Analysis and Discussion
-Table 1 shows the result of the raw data collection and cleaning. “Before” and "After” columns indicate the total number of tweets obtained before and after the data cleaning. The differences are assumed to be due to bot-made tweets, in accordance with the previous study (Kraaijeveld & De Smedt, 2020). Overall, 786,819 usable tweets were obtained for further analysis.
-
-Table 1. Descriptive analytics summary
-
-Token	Before	After	Changes	Changes %
-ADA	    114,876	104,574	10,302	8.97%
-BNB	    121,670	97,365	24,305	19.98%
-BTC		120,486	108,888	11,598	9.63%
-DOGE	121,000	103,973	17,027	14.07%
-DOT		51,076	50,605	471	0.92%
-ETH		121,450	96,756	24,694	20.33%
-LINK	119,854	64,534	55,320	46.16%
-UNI		46,754	44,372	2,382	5.09%
-XRP		119,130	115,752	3,378	2.84%
-Table 2 shows the results of the ADF and the Johansen Cointegration test. If the ADF statistic was lower than the critical value, the conclusion was that the time-series was stationary. As seen in Table 2, all sentiments were stationary. Next, the Johansen Cointegration test was done using the time-series of daily sentiments, price changes, and transaction volume changes. The results suggested that ADA, BNB, DOT, LINK, and UNI might have long-term relationships with one of the other time-series. Meanwhile, the rest of the tokens did not have long-term or short-term relationships with their price and transaction volume changes.
 
 ## Conclusion:
 In conclusion, the results of the study do not show any significant relationships between Twitter sentiments and price changes. However, a significant result was observed in the predictive capability of sentiment to predict transaction volume changes for BTC, DOGE, DOT, and XRP. Conversely, the results indicate that volume changes have the capabilities of predicting sentiment changes for ADA and DOGE.
